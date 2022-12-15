@@ -1,7 +1,7 @@
-class BookmarksController < ApplicationController
+class VinylsController < ApplicationController
 
   def index
-    # @bookmarks = Bookmark.all
+    @vinyls = Vinyl.all
   end
 
   def new
