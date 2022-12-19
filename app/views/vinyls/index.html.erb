@@ -1,21 +1,24 @@
 <div>
 
   <div class="base">
-    <div class="btn">
-      <%= link_to "Recherche" %>
-    </div>
+
   </div>
 
   <div class="index">
 
-    <div>
-      <h2>Mes vinyls</h2>
+     <h2> <strong>Mes vinyls </strong> <%= image_tag("cd.svg") %> </h2>
       <div class="wrapper">
+        <nav class="lil-nav">
+        <div class="gallery">
+          <% @vinyls.each do |vinyl| %>
+            <%= cl_image_tag vinyl.photo.key.to_s, size: "150x150", crop: :fill, :style => "border-radius: 5%; margin: 2%" %>
+          <% end %>
+        </div>
       </div>
-    </div>
+
 
     <div>
-      <h2>Mes souhaits</h2>
+      <h2> <strong>Mes souhaits</strong>  <%= image_tag("heart.svg") %> </h2>
         <div class="wrapper">
         </div>
     </div>

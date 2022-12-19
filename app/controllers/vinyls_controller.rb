@@ -13,12 +13,18 @@ class VinylsController < ApplicationController
   end
 
   def create
-    vinyl = Vinyl.new(vinyl_params)
-    vinyl.save
+    @vinyl = Vinyl.new(vinyl_params)
+    # @vinyl.user = current_user
+    @vinyl.save
     redirect_to vinyls_path
   end
 
   def edit
+  end
+
+  def update
+    @vinyl.update(vinyl_params)
+    redirect_to vinyl_path(@vinyl)
   end
 
   def destroy
@@ -27,7 +33,6 @@ class VinylsController < ApplicationController
   end
 
   def favorites
-    @favorite = 
   end
 
   private
