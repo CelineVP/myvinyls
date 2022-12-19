@@ -1,0 +1,17 @@
+.base {
+  background-image: url('banner.jpg');
+  width: 100vw;
+  height: 30vh;
+  background-size: cover;
+  object-fit: cover;
+  object-position: center;
+}
+
+.index {
+  margin-top: 30px;
+  margin-left: 15px;
+}
+
+h2 {
+  font-family: $body-font;
+}

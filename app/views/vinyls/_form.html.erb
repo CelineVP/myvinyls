@@ -1,0 +1,7 @@
+<%= simple_form_for(@vinyl) do |f| %>
+  <%= f.input :album %>
+  <%= f.input :artist %>
+  <%= f.input :commentaire %>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit class: 'btn' %>
+<% end %>

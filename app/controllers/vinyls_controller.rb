@@ -1,44 +1,43 @@
 class VinylsController < ApplicationController
+  before_action :set_vinyl, only: [:show, :edit, :update, :destroy]
 
   def index
     @vinyls = Vinyl.all
   end
 
   def new
-    # @list = List.find(params[:list_id])
-    # @bookmark = Bookmark.new
+    @vinyl = Vinyl.new
   end
 
   def show
-    # @dragon = Dragon.find(params[:id])
-    # @booking = Booking.new
   end
 
   def create
-    # @list = List.find(params[:list_id])
-    # @bookmark = Bookmark.new(bookmark_params)
-    # @bookmark.list = @list
-    # if @bookmark.save
-    #   redirect_to list_path(@list)
-    # else
-    #   render template: "lists/show"
-    # end
+    vinyl = Vinyl.new(vinyl_params)
+    vinyl.save
+    redirect_to vinyls_path
+  end
+
+  def edit
   end
 
   def destroy
-    # @bookmark = Bookmark.find(params[:id])
-    # @bookmark.destroy
-    # redirect_to root_path
+    @vinyl.destroy
+    redirect_to vinyls_path
   end
 
-  # private
+  def favorites
+    @favorite = 
+  end
 
-  # def find_list
-  #   @list = List.find(params[:list_id])
-  # end
+  private
 
-  # def bookmark_params
-  #   params.require(:bookmark).permit(:comment, :movie_id)
-  # end
+  def set_vinyl
+    @vinyl = Vinyl.find(params[:id])
+  end
+
+  def vinyl_params
+    params.require(:vinyl).permit(:album, :artist, :commentaire, :photo)
+  end
 
 end

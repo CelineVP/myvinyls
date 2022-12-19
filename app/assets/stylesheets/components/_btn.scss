@@ -1,0 +1,15 @@
+.btn {
+  font-family: $body-font;
+  background-color: $yellow;
+  border-radius: 15px;
+  display: block;
+  padding: 10px 50px;
+  margin: auto;
+  width: 80%;
+  text-align: center;
+  font-size: 18px;
+  a {
+    text-decoration: none;
+    color: $gray;
+  }
+}
