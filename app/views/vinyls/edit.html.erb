@@ -2,25 +2,15 @@
 </div>
 
   <div class="btn-noir">
-    <h2>Mes vinyls</h2>
+
+  <%= @vinyl.artist %>
+
+    <%= simple_form_for(@vinyl) do |f| %>
+      <%= f.input :album %>
+      <%= f.input :artist %>
+      <%= f.input :commentaire %>
+      <%= f.submit class: 'btn' %>
+    <% end %>
+
+
   </div>
-
-<div class="row">
-    <div class="mesvinyls"><% @vinyls.each do |vinyl| %>
-        <div class="inline"><%= cl_image_tag vinyl.photo.key.to_s, size: "150x150", crop: :fill, :style => "border-radius: 5%" %>
-            <div class="action">
-              <%= link_to vinyl_path(vinyl), data: { turbo_method: :delete, turbo_confirm: "Supprimer ?" } do %>
-                <%= image_tag("trash.svg") %>
-              <% end %>
-
-              <%= image_tag("edit.svg") %>
-              
-            </div>
-        </div>
-      <% end %>
-
-    </div>
-
-
-
-</div>

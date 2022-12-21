@@ -9,12 +9,20 @@ $large: 1200px;
   object-position: center;
 }
 
+.click {
+  a {
+    text-decoration: none;
+    color: $gray;
+  }
+}
+
 .index {
   margin-top: 30px;
   margin-left: 15px;
 h2 {
   font-family: $body-font;
   margin-left: 12px;
+  text-decoration: none;
 }
 }
 

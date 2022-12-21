@@ -2,5 +2,24 @@
 </div>
 
   <div class="btn-noir">
-
+    <%= @vinyl.artist %>
   </div>
+
+<div class="contentshow">
+  <div class="show">
+    <%= @vinyl.album %>
+    <%= cl_image_tag @vinyl.photo.key, size: "150x150", crop: :fill, :style => "border-radius: 5%"  %>
+    <div class="btn">
+      <%= @vinyl.commentaire %>
+    </div>
+  </div>
+
+  <div>
+    <%= link_to vinyl_path(@vinyl), data: { turbo_method: :delete, turbo_confirm: "Supprimer ?" } do %>
+      <%= image_tag("trash.svg") %>
+    <% end %>
+    <%= link_to edit_vinyl_path(@vinyl) do %>
+      <%= image_tag("edit.svg") %>
+    <% end %>
+  </div>
+</div>

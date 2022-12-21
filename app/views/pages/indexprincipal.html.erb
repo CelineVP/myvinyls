@@ -4,9 +4,10 @@
   </div>
 
   <div class="index">
-
-    <div>
-      <h2> <strong>Mes vinyls </strong> <%= image_tag("cd.svg") %> </h2>
+    <div class="click">
+      <%= link_to vinyls_path do %>
+      <h2> <%= "Mes vinyls" %> <%= image_tag("cd.svg") %></h2>
+      <% end %>
     </div>
 
       <div class="wrapper">
@@ -18,8 +19,12 @@
         </div>
       </div>
 
-    <div>
-      <h2> <strong>Mes souhaits</strong>  <%= image_tag("heart.svg") %> </h2>
+      <div class="click">
+            <%= link_to favorites_path do %>
+            <h2> <%= "Mes souhaits" %> <%= image_tag("heart.svg") %></h2>
+            <% end %>
+      </div>
+
         <div class="wrapper">
         </div>
     </div>
