@@ -1,28 +1,26 @@
-<div>
+<div class="base">
+</div>
 
-  <div class="base">
-
+  <div class="btn-noir">
+    <h2>Mes vinyls</h2>
   </div>
 
-  <div class="index">
+<div class="row">
+    <div class="mesvinyls"><% @vinyls.each do |vinyl| %>
+        <div class="inline"><%= cl_image_tag vinyl.photo.key.to_s, size: "150x150", crop: :fill, :style => "border-radius: 5%" %>
+            <div class="action">
+              <%= link_to vinyl_path(vinyl), data: { turbo_method: :delete, turbo_confirm: "Supprimer ?" } do %>
+                <%= image_tag("trash.svg") %>
+              <% end %>
 
-     <h2> <strong>Mes vinyls </strong> <%= image_tag("cd.svg") %> </h2>
-      <div class="wrapper">
-        <nav class="lil-nav">
-        <div class="gallery">
-          <% @vinyls.each do |vinyl| %>
-            <%= cl_image_tag vinyl.photo.key.to_s, size: "150x150", crop: :fill, :style => "border-radius: 5%; margin: 2%" %>
-          <% end %>
+              <%= image_tag("edit.svg") %>
+
+            </div>
         </div>
-      </div>
+      <% end %>
 
-
-    <div>
-      <h2> <strong>Mes souhaits</strong>  <%= image_tag("heart.svg") %> </h2>
-        <div class="wrapper">
-        </div>
     </div>
 
-  </div>
+
 
 </div>

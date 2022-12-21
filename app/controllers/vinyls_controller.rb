@@ -20,6 +20,7 @@ class VinylsController < ApplicationController
   end
 
   def edit
+    @vinyls = Vinyl.all
   end
 
   def update

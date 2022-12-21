@@ -13,3 +13,17 @@
     color: $gray;
   }
 }
+
+.btn-noir {
+  font-family: $body-font;
+  background-color: $gray;
+  color: $yellow;
+  border-radius: 15px;
+  display: block;
+  padding: 10px 50px;
+  margin: auto;
+  margin-top: 10px;
+  width: 80%;
+  text-align: center;
+  font-size: 18px;
+}

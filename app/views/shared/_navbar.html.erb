@@ -1,5 +1,5 @@
 <div class="navbar">
   <%= link_to image_tag("house.svg"), vinyls_path, class: "bloc-icon #{'active' if current_page?(vinyls_path)}", id:"accueil"%>
   <%= link_to image_tag("plus.svg"), new_vinyl_path, class: "bloc-icon #{'active' if current_page?(new_vinyl_path)}", id:"plus"%>
-  <%# <%= link_to image_tag("favorite.svg"), vinyl_path, class: "bloc-icon #{'active' if current_page?(vinyl_path)}", id:"favorite"%> %>
+  <%= link_to image_tag("favorite.svg"), favorites_path, class: "bloc-icon #{'active' if current_page?(favorites_path)}", id:"favorite"%>
 </div>
