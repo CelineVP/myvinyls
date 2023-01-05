@@ -1,0 +1,47 @@
+.listing {
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.mesvinyls {
+  display: flex;
+  padding-bottom: 80px;
+  flex-direction: column;
+  scroll-behavior: smooth;
+  flex-wrap: wrap;
+  @media screen and (min-width: $large) {
+    display: block;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scroll-snap-type: y mandatory;
+  }
+}
+
+.row {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * var(--bs-gutter-y));
+  margin-right: calc(-.5 * var(--bs-gutter-x));
+  margin-left: calc(-.5 * var(--bs-gutter-x));
+}
+
+.inline {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin: 20px 40px;
+}
+
+.action {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  img {
+    padding:10px 0;
+  }
+}

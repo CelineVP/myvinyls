@@ -9,7 +9,6 @@
   margin-top: 20px;
   z-index: 5;
   padding-bottom: 1rem;
-
   .bloc-icon {
     display: flex;
     justify-content: space-around;
@@ -18,21 +17,18 @@
     padding: 5px;
     color: $light-gray_50;
   }
-
   .bloc-icon img {
     opacity: .6;
   }
   .bloc-icon.active img {
     opacity: 1;
   }
-
   #accueil:after {
   }
   #fplus:after {
   }
   #favorite:after {
   }
-
   .icon {
     width: 40px;
     color: $light-gray_50;

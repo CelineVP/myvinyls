@@ -5,10 +5,10 @@
         <h3>Ajouter un vinyl</h3>
           <%= simple_form_for(@vinyl) do |f| %>
             <%= f.input :album, placeholder: "Titre de l'album"  %>
-            <%= f.input :artist, placeholder: "Nom de l'artiste" %>
+            <%= f.input :artist, label: 'Artiste', placeholder: "Nom de l'artiste" %>
             <%= f.input :commentaire %>
             <%= f.input :photo, as: :file %>
-            <%= f.submit class: 'btn' %>
+            <%= f.submit class: 'btn', label: 'Ajouter' %>
           <% end %>
       </div>
     </div>
