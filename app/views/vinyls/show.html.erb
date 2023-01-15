@@ -1,5 +1,12 @@
 <div class="base">
 </div>
+
+<div class="retour">
+  <%= link_to vinyls_path do %>
+    <%= image_tag("reply.svg") %>
+  <% end %>
+</div>
+
   <div class="titre">
     <h2><%= @vinyl.artist %></h2>
     <h3> <%= @vinyl.album %></h3>
