@@ -5,7 +5,9 @@
 
 .mesvinyls {
   display: flex;
-  padding-bottom: 80px;
+  width: 100vw;
+
+  padding: 0pX  0px 80px 12px;
   flex-direction: column;
   scroll-behavior: smooth;
   flex-wrap: wrap;
@@ -18,7 +20,7 @@
 }
 
 .row {
-  --bs-gutter-x: 1.5rem;
+  --bs-gutter-x: 0;
   --bs-gutter-y: 0;
   display: flex;
   flex-wrap: wrap;
