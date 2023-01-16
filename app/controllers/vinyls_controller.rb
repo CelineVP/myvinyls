@@ -2,7 +2,12 @@ class VinylsController < ApplicationController
   before_action :set_vinyl, only: [:show, :edit, :update, :destroy]
 
   def index
-    @vinyls = Vinyl.all
+    if params[:query].present?
+      sql_query = "artist ILIKE :query OR album ILIKE :query"
+      @vinyls = Vinyl.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @vinyls = Vinyl.all
+    end
   end
 
   def new

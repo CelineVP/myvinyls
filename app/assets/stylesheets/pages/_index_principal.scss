@@ -21,7 +21,7 @@ $large: 1200px;
   margin-left: 15px;
 h2 {
   font-family: $body-font;
-  margin-left: 12px;
+  margin: 0px;
   text-decoration: none;
 }
 }
@@ -39,7 +39,8 @@ h2 {
 .gallery {
   scroll-behavior: smooth;
   display: flex;
-  padding-bottom: 20px;
+  padding-bottom: 18px;
+  padding-top: 18px;
 
   @media screen and (min-width: $large) {
     display: block;

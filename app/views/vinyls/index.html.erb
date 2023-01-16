@@ -2,6 +2,17 @@
 </div>
 
 <div class="listing">
+
+<%= form_with url: vinyls_path, method: :get, class: "d-flex" do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Trouver un vinyl"
+  %>
+  <%= submit_tag "Recherche", class: "search" %>
+<% end %>
+
+
   <div class="titre">
     <h2>Mes vinyls</h2>
   </div>
