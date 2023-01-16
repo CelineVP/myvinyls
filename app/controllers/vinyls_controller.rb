@@ -1,5 +1,8 @@
 class VinylsController < ApplicationController
-  before_action :set_vinyl, only: [:show, :edit, :update, :destroy]
+  include Pagy::Backend
+  before_action :set_vinyl, only: [:archives, :show, :edit, :update, :destroy]
+  # before_action :set_user
+  before_action :set_all_vinyls, only: [:index, :archives]
 
   def index
     if params[:query].present?
@@ -8,6 +11,10 @@ class VinylsController < ApplicationController
     else
       @vinyls = Vinyl.all
     end
+  end
+
+  def archives
+    @pagy, @archived_vinyls = pagy(@vinyls, items: 10)
   end
 
   def new
@@ -20,6 +27,7 @@ class VinylsController < ApplicationController
   def create
     @vinyl = Vinyl.new(vinyl_params)
     # @vinyl.user = current_user
+    photo.attached? ? photo : 'pochette.jpg'
     @vinyl.save
     redirect_to vinyls_path
   end
@@ -48,6 +56,15 @@ class VinylsController < ApplicationController
 
   def vinyl_params
     params.require(:vinyl).permit(:album, :artist, :commentaire, :photo)
+  end
+
+  # def set_user
+  #   @user = current_user
+  # end
+
+  def set_all_vinyls
+    @vinyls = Vinyl.where(user_id: @user).order('date DESC')
+  # A terminer = afficher par les derniers ajouter
   end
 
 end

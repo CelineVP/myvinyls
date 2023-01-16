@@ -16,12 +16,20 @@
   <div class="titre">
     <h2>Mes vinyls</h2>
   </div>
-
     <div class="row">
       <div class="mesvinyls"><% @vinyls.each do |vinyl| %>
           <div class="inline">
             <%= link_to vinyl do %>
-              <%= cl_image_tag vinyl.photo.key.to_s, size: "150x150", crop: :fill, :style => "border-radius: 5%" %>
+
+              <% if vinyl.photo %>
+                <%= cl_image_tag vinyl.photo.key.to_s, size: "150x150", crop: :fill, :style => "border-radius: 5%"  %>
+              <% else %>
+                <%= image_tag "pochette.jpg"  %>
+              <% end %>
+
+
+              <%# <%= cl_image_tag vinyl.photo.key.to_s, size: "150x150", crop: :fill, :style => "border-radius: 5%" %> %>
+
                 <div class="action">
                   <%= link_to vinyl_path(vinyl), data: { turbo_method: :delete, turbo_confirm: "Supprimer ?" } do %>
                     <%= image_tag("trash.svg") %>
