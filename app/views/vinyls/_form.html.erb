@@ -7,10 +7,12 @@
             <%= f.input :album, placeholder: "Titre de l'album"  %>
             <%= f.input :artist, label: 'Artiste', placeholder: "Nom de l'artiste" %>
             <%= f.input :commentaire %>
-            <%= f.input :photo, as: :file %>
+            <%= f.input :photo, as: :file, input_html: {multiple: true} %>
             <%= f.submit class: 'btn', value:'Ajouter' %>
           <% end %>
       </div>
     </div>
   </div>
 </div>
+
+<%# Ajout recent de input_html %>

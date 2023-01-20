@@ -21,14 +21,11 @@
           <div class="inline">
             <%= link_to vinyl do %>
 
-              <% if vinyl.photo %>
-                <%= cl_image_tag vinyl.photo.key.to_s, size: "150x150", crop: :fill, :style => "border-radius: 5%"  %>
+              <% if vinyl.photo.present? %>
+                <%= cl_image_tag vinyl.photo.key.to_s, size: "150x150", crop: :fill, :style => "border-radius: 5%" %>
               <% else %>
-                <%= image_tag "pochette.jpg"  %>
+                <%= image_tag "pochette.jpg", size: "150x150", crop: :fill, :style => "border-radius: 5%" %>
               <% end %>
-
-
-              <%# <%= cl_image_tag vinyl.photo.key.to_s, size: "150x150", crop: :fill, :style => "border-radius: 5%" %> %>
 
                 <div class="action">
                   <%= link_to vinyl_path(vinyl), data: { turbo_method: :delete, turbo_confirm: "Supprimer ?" } do %>
