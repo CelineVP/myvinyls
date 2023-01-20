@@ -13,11 +13,16 @@
   </div>
 
   <div class="contentshow">
+    <% if @vinyl.photo.exist? %>
+      <%= cl_image_tag vinyl.photo.key.to_s, size: "150x150", crop: :fill, :style => "border-radius: 5%" %>
+    <% else %>
+      <%= image_tag "pochette.jpg", size: "150x150", crop: :fill, :style => "border-radius: 5%" %>
+    <% end %>
 
-    <%= cl_image_tag @vinyl.photo.key, size: "150x150", crop: :fill, :style => "border-radius: 5%"  %>
-      <div class="btn">
-        <%= @vinyl.commentaire %>
-      </div>
+    <div class="com">
+      <%= @vinyl.commentaire %>
+    </div>
+
   <div>
     <%= link_to vinyl_path(@vinyl), data: { turbo_method: :delete, turbo_confirm: "Supprimer ?" } do %>
       <%= image_tag("trash.svg") %>

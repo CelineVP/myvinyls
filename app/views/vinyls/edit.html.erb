@@ -9,8 +9,8 @@
       <%= f.input :album %>
       <%= f.input :artist %>
       <%= f.input :commentaire %>
+      <%= f.input :photo, as: :file, input_html: {multiple: true} %>
       <%= f.submit class: 'btn', value: 'Modifier' %>
     <% end %>
-
 
   </div>

@@ -27,7 +27,6 @@ class VinylsController < ApplicationController
   def create
     @vinyl = Vinyl.new(vinyl_params)
     # @vinyl.user = current_user
-    photo.attached? ? photo : 'pochette.jpg'
     @vinyl.save
     redirect_to vinyls_path
   end
