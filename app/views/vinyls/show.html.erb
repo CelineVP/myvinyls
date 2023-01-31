@@ -13,12 +13,8 @@
   </div>
 
   <div class="contentshow">
-  
-    <% if @vinyl.photo.exist? %>
-      <%= cl_image_tag vinyl.photo.key.to_s, size: "150x150", crop: :fill, :style => "border-radius: 5%" %>
-    <% else %>
-      <%= image_tag "pochette.jpg", size: "150x150", crop: :fill, :style => "border-radius: 5%" %>
-    <% end %>
+
+       <%= cl_image_tag @vinyl.photo.key.to_s, size: "150x150", crop: :fill, :style => "border-radius: 5%" %>
 
     <div class="com">
       <%= @vinyl.commentaire %>

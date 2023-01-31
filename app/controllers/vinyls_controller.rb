@@ -27,8 +27,12 @@ class VinylsController < ApplicationController
   def create
     @vinyl = Vinyl.new(vinyl_params)
     # @vinyl.user = current_user
-    @vinyl.save
-    redirect_to vinyls_path
+    set_generic_photo unless @vinyl.photo.present?
+    if @vinyl.save!
+      redirect_to vinyls_path
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def edit
@@ -66,4 +70,16 @@ class VinylsController < ApplicationController
   # A terminer = afficher par les derniers ajouter
   end
 
+
+  def set_generic_photo
+    @vinyl.photo.attach(
+      io: File.open('app/assets/images/pochette.jpg'),
+      filename: 'pochette.jpg',
+      content_type: 'image/jpg'
+    )
+  end
+  # afficher une images par defautl si pas ajouté à la main
+
 end
+
+# réussier à avoir photo par default et modifier photo
