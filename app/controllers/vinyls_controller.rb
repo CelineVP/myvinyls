@@ -3,6 +3,8 @@ class VinylsController < ApplicationController
   before_action :set_vinyl, only: [:archives, :show, :edit, :update, :destroy]
   # before_action :set_user
   before_action :set_all_vinyls, only: [:index, :archives]
+  skip_before_action :authenticate_user!, only: [ :home ]
+
 
   def index
     if params[:query].present?
