@@ -11,7 +11,7 @@
   </head>
 
   <body>
-    <%= render "shared/navbar"  unless current_page?('/') || current_page?('/users/sign_in') || current_page?('/user/sign_in') || current_page?('/users/sign_up') || current_page?('/user/password/new') %>
+    <%= render "shared/navbar"  unless current_page?('/') || current_page?('/users/sign_in') || current_page?('/user/sign_in') || current_page?('/users/sign_up') || current_page?('/users/password/new') %>
 
     <% if notice %>
       <p class="alert alert-success"><%= notice %></p>

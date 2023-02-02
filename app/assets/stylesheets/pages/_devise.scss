@@ -14,12 +14,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+    img {
+      width : 150px;
+      height : 150px;
+      padding-top: 10px;
+    }
 }
 
 .bouton {
-  font-family: "Jost", "Helvetica", "sans-serif";
-  color: white;
-  background-color: #2C445C;
+  font-family: $body-font;
+  background-color: $yellow;
   border-radius: 5px;
   display: block;
   margin: auto;
@@ -40,5 +44,4 @@
   flex-direction: column;
   align-items: center;
   padding-top: 1rem;
-
 }
