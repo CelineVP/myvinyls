@@ -3,8 +3,10 @@ class VinylsController < ApplicationController
   before_action :set_vinyl, only: [:archives, :show, :edit, :update, :destroy]
   # before_action :set_user
   before_action :set_all_vinyls, only: [:index, :archives]
+  before_action :set_user, only: [:index]
 
   def index
+    @races = @user.races # associer les vinyls à l'user
     if params[:query].present?
       sql_query = "artist ILIKE :query OR album ILIKE :query"
       @vinyls = Vinyl.where(sql_query, query: "%#{params[:query]}%")
@@ -79,6 +81,10 @@ class VinylsController < ApplicationController
     )
   end
   # afficher une images par defautl si pas ajouté à la main
+
+  def set_user
+    @user = current_user
+  end
 
 end
 
