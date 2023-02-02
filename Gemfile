@@ -49,6 +49,10 @@ gem 'pagy', '~> 0.6.0'
 
 gem "devise"
 
+gem "omniauth-google-oauth2"
+gem "omniauth-rails_csrf_protection"
+# authentification google
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
