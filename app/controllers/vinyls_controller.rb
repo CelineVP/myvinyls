@@ -1,9 +1,8 @@
 class VinylsController < ApplicationController
   include Pagy::Backend
-  before_action :set_vinyl, only: [:archives, :show, :edit, :update, :destroy]
-  # before_action :set_user
-  before_action :set_all_vinyls, only: [:index, :archives]
   before_action :set_user, only: [:index]
+  before_action :set_vinyl, only: [:archives, :show, :edit, :update, :destroy]
+  before_action :set_all_vinyls, only: [:index, :archives]
 
   def index
     @races = @user.races # associer les vinyls à l'user
