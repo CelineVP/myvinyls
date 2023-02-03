@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  get "/indexprincipal", to: "pages#indexprincipal"
+  get "welcome", to: "pages#welcome"
 
   resources :vinyls
   get "archives", to: "vinyls#archives"

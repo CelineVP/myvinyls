@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   def home
   end
 
-  def indexprincipal
+  def welcome
     @vinyls = Vinyl.all
   end
 end
