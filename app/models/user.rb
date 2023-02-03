@@ -13,6 +13,7 @@ class User < ApplicationRecord
     end
   end
   # Authentification google
+  
   has_many :vinyls
   has_one_attached :photo
 end
