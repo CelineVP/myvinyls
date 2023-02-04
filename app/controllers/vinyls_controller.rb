@@ -7,7 +7,6 @@ class VinylsController < ApplicationController
 
   def index
     @vinyls = @user.vinyls # associer les vinyls à l'user
-
     if params[:query].present?
       sql_query = "artist ILIKE :query OR album ILIKE :query"
       @vinyls = Vinyl.where(sql_query, query: "%#{params[:query]}%")
@@ -27,12 +26,27 @@ class VinylsController < ApplicationController
 
   def show
     @vinyl = Vinyl.find(params[:id])
-    @photo = @vinyl.photo.attached? ? @vinyl.photo : "pochette.jpg"
   end
 
   def create
     @vinyl = current_user.vinyls.build(vinyl_params)
     @vinyl.user = current_user
+
+    if @vinyl.photo.present?
+      return @vinyl.save
+    else
+      @vinyl.photo.attach(
+        io: File.open('app/assets/images/pochette.jpg'),
+        filename: 'pochette.jpg',
+        content_type: 'image/jpg'
+      )
+    end
+
+    if @vinyl.save
+      redirect_to @vinyl
+    else
+      render :new, status: :unprocessable_entity
+    end
     # set_generic_photo unless @vinyl.photo.present?
     # if @vinyl.photo.present?
     #   return @vinyl.photo.attach
@@ -43,12 +57,6 @@ class VinylsController < ApplicationController
     #         content_type: 'image/jpg'
     #       )
     # end
-
-    if @vinyl.save
-      redirect_to @vinyl
-    else
-      render :new, status: :unprocessable_entity
-    end
   end
 
   def edit
