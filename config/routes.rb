@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   get "welcome", to: "pages#welcome"
+  get "profil", to: "pages#profil"
 
   resources :vinyls
   get "archives", to: "vinyls#archives"

@@ -5,7 +5,7 @@ class VinylsController < ApplicationController
   before_action :set_all_vinyls, only: [:index, :archives]
 
   def index
-    # @races = @user.races # associer les vinyls à l'user
+    @vinyls = @user.vinyls # associer les vinyls à l'user
     if params[:query].present?
       sql_query = "artist ILIKE :query OR album ILIKE :query"
       @vinyls = Vinyl.where(sql_query, query: "%#{params[:query]}%")
