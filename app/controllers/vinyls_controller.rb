@@ -27,28 +27,29 @@ class VinylsController < ApplicationController
 
   def show
     @vinyl = Vinyl.find(params[:id])
+    @photo = @vinyl.photo.attached? ? @vinyl.photo : "pochette.jpg"
   end
 
   def create
     @vinyl = current_user.vinyls.build(vinyl_params)
-    set_generic_photo unless @vinyl.photo.present?
+    @vinyl.user = current_user
+    # set_generic_photo unless @vinyl.photo.present?
+    # if @vinyl.photo.present?
+    #   return @vinyl.photo.attach
+    # else
+    #   @vinyl.photo.attach(
+    #         io: File.open('app/assets/images/pochette.jpg'),
+    #         filename: 'pochette.jpg',
+    #         content_type: 'image/jpg'
+    #       )
+    # end
+
     if @vinyl.save
       redirect_to @vinyl
     else
       render :new, status: :unprocessable_entity
     end
   end
-
-  # def create
-  #   @vinyl = Vinyl.new(vinyl_params)
-  #   @user = current_user
-  #   set_generic_photo unless @vinyl.photo.present?
-  #   if @vinyl.save
-  #     redirect_to vinyls_path(@vinyl)
-  #   else
-  #     render :new, status: :unprocessable_entity
-  #   end
-  # end
 
   def edit
   end
@@ -82,13 +83,13 @@ class VinylsController < ApplicationController
   end
 
 
-  def set_generic_photo
-    @vinyl.photo.attach(
-      io: File.open('app/assets/images/pochette.jpg'),
-      filename: 'pochette.jpg',
-      content_type: 'image/jpg'
-    )
-  end
+  # def set_generic_photo
+  #   @vinyl.photo.attach(
+  #     io: File.open('app/assets/images/pochette.jpg'),
+  #     filename: 'pochette.jpg',
+  #     content_type: 'image/jpg'
+  #   )
+  # end
   # afficher une images par defautl si pas ajouté à la main
 
   def set_user
