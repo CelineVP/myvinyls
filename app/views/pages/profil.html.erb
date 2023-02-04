@@ -1,6 +1,12 @@
 <div class="base">
 </div>
 
-<%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %>
+<div class="eject">
+  <%= link_to image_tag("deconnexion.svg"), destroy_user_session_path, class: "exit", method: :delete %>
+  <%= "Se déconnecter" %>
+</div>
 
-<%= link_to "Modifier", edit_user_registration_path %>
+<div>
+  <%= link_to image_tag("edit.svg"), edit_user_registration_path %>
+  <%= "Modifier" %>
+</div>

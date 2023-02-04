@@ -10,17 +10,11 @@
     <%=link_to "Explorer", welcome_path %>
   <%# </div> %>
 
-  <%# <% if user_signed_in? %>
-      <%# Logged in as <str><%= current_user.email %>
-      <%# <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
-     <%# <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %>
-    <%# <% else %>
+
     <div class="connect">
-       <%= link_to "S'inscrire", new_user_registration_path, :class => 'btn-home' %> ||
+      <%= link_to "S'inscrire", new_user_registration_path, :class => 'btn-home' %> ||
       <%= link_to "Se connecter", new_user_session_path, :class => 'btn-home' %>
     </div>
-    <%# <% end %>
-
     <%# connection devise %>
 
 </div>
