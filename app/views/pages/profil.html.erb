@@ -1,12 +1,18 @@
 <div class="base">
 </div>
 
-<div class="eject">
-  <%= link_to image_tag("deconnexion.svg"), destroy_user_session_path, class: "exit", method: :delete %>
-  <%= "Se déconnecter" %>
+<div class="txt">
+  <p>Vous avez <%= @vinyls %> <strong>vinyls</strong> dans votre collection. </p>
+  <p>Vous avez favoris</p>
 </div>
 
-<div class="elect">
-  <%= link_to image_tag("edit.svg"), edit_user_registration_path %>
-  <%= "Modifier" %>
+<div class="btn-profil">
+  <div class="eject">
+    <%= link_to image_tag("deconnexion.svg"), destroy_user_session_path, class: "exit", method: :delete %>
+    <%= "Se déconnecter" %>
+  </div>
+  <div class="elect">
+    <%= link_to image_tag("edit.svg"), edit_user_registration_path %>
+    <%= "Modifier" %>
+  </div>
 </div>
