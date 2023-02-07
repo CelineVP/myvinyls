@@ -1,18 +1,22 @@
 .txt {
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4vh;
 }
 
 .btn-profil {
   display: flex;
-  padding: auto
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row-reverse;
+  margin-bottom: 5vh;
 }
 
-.exit {
+.edit {
   display: flex;
   width: 40px;
-  img {
-    color: $yellow;
-  }
+ 
 }
 
 .eject {
