@@ -1,5 +1,17 @@
+.logo-profil {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  img {
+    width : 100px;
+    height : 100px;
+    padding-top: 10px;
+  }
+}
+
 .txt {
   display: flex;
+
   flex-direction: column;
   align-items: center;
   margin-top: 4vh;
@@ -10,13 +22,12 @@
   justify-content: space-around;
   align-items: center;
   flex-direction: row-reverse;
-  margin-bottom: 5vh;
+  margin: 20vh 0vh 0vh 0vh;;
 }
 
 .edit {
   display: flex;
   width: 40px;
- 
 }
 
 .eject {
